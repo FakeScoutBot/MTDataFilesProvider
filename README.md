@@ -2,13 +2,13 @@
 
 [![](https://jitpack.io/v/L-JINBIN/MTDataFilesProvider.svg)](https://jitpack.io/#L-JINBIN/MTDataFilesProvider)
 
-为您自己开发的应用快速注入 MT 的文件提供器，无需 ROOT 即可在手机上管理此应用的私有目录文件。
+Quickly inject MT's file provider into your own app, so you can manage the app's private directory files on your phone without ROOT.
 
-## 使用方法
+## Usage
 
-### ① 添加 jitpack.io 仓库地址
+### ① Add the jitpack.io repository
 
-在项目根目录的 settings.gradle 文件中添加 jitpack.io 的地址：
+Add the jitpack.io address to the `settings.gradle` file in the project root directory:
 
 ```groovy
 dependencyResolutionManagement {
@@ -20,7 +20,7 @@ dependencyResolutionManagement {
 }
 ```
 
-有一些项目可能是在根目录的 build.gradle 文件中添加：
+Some projects may instead need it added in the `build.gradle` file in the root directory:
 
 ```groovy
 allprojects {
@@ -31,9 +31,9 @@ allprojects {
 }
 ```
 
-### ② 添加 MTDataFilesProvider 依赖
+### ② Add the MTDataFilesProvider dependency
 
-在模块的 build.gradle 中添加依赖：
+Add the dependency in your module's `build.gradle`:
 
 ```groovy
 dependencies {
@@ -41,14 +41,13 @@ dependencies {
 }
 ```
 
-这里 `debugImplementation` 表示仅在 debug 版中注入
-MTDataFilesProvider，编译正式版后会自动去除，如果希望在正式版中也注入则改为 `implementation`
+Here, `debugImplementation` means MTDataFilesProvider is injected only in the debug build and is automatically removed when you compile the release build. If you want it injected in the release build as well, change it to `implementation`.
 
-### ③ 在 MT 管理器中添加本地存储
+### ③ Add local storage in MT Manager
 
-- 下载安装 [MT 管理器](https://mt2.cn/download/)
-- 进入主界面后打开侧拉栏，点击右上角的「添加本地存储菜单」
-- 在新弹出的界面的侧拉栏中找到并选中你的应用，点击底部的「选择」
-- 返回 MT 管理器，就会看到刚刚添加的本地存储，点击即可访问
+- Download and install [MT Manager](https://mt2.cn/download/)
+- On the main screen, open the side drawer and tap the "Add local storage" menu in the top-right corner
+- In the screen that pops up, find and select your app in the side drawer, then tap "Select" at the bottom
+- Return to MT Manager and you will see the local storage you just added; tap it to access
 
-具体步骤可参考 [MT 管理器 - 注入文件提供器](https://mt2.cn/guide/reverse/inject-documents-provider.html#%E6%B7%BB%E5%8A%A0%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8)
+For detailed steps, see [MT Manager - Inject a Documents Provider](https://mt2.cn/guide/reverse/inject-documents-provider.html#%E6%B7%BB%E5%8A%A0%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8)
